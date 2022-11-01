@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-Author;
+  }
+}
+
+@layer components {
+  .input-submit {
+    @apply mt-4 rounded py-2 text-lg text-white;
+  }
+}
+
+@font-face {
+  font-family: "Author";
+  src: url(./fonts/Author.ttf);
+  font-weight: 100 900;
+}
