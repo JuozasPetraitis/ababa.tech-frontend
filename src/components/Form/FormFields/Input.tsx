@@ -1,10 +1,9 @@
-import React from "react";
 import { useFormContext } from "react-hook-form";
 
 type InputProps = {
   label: string;
   type?: string;
-  validate: "Username" | "Email" | "Password";
+  validate: "Username" | "Email" | "Password" | "Movie";
 };
 
 const Input = ({ label, validate, type }: InputProps): JSX.Element => {
@@ -31,11 +30,22 @@ const Input = ({ label, validate, type }: InputProps): JSX.Element => {
     },
   };
 
+  const movieValidator = {
+    required: true,
+    minLength: {
+      value: 4,
+      message: "Text has to be longer than 4 letters",
+    },
+  };
+
   return (
     <input
       type={type ? type : "text"}
       className="rounded-sm border border-gray-400 bg-gray-50 px-4 py-2 text-xs placeholder:text-gray-400"
-      {...register(label, validate === "Username" ? usernameValidator : validate === "Email" ? emailValidator : passwordValidator)}
+      {...register(
+        label,
+        validate === "Username" ? usernameValidator : validate === "Email" ? emailValidator : validate === "Password" ? passwordValidator : movieValidator
+      )}
     />
   );
 };

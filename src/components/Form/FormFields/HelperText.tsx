@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
   name: string;
   clickHandler?: () => void;
@@ -21,7 +19,7 @@ const HelperText = ({ name, clickHandler }: Props) => {
       </span>
     </p>
   ) : (
-    <p className="text-center text-sm">Error</p>
+    <p className="text-center text-sm">{name}</p>
   );
 };
 

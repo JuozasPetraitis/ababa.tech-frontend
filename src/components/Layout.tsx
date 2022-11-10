@@ -1,18 +1,16 @@
-import React from "react";
-import Footer from "./Footer";
-import Header from "./Header";
 import { Outlet } from "react-router-dom";
+import { Header, Footer } from "./index";
 
-type Props = {};
-
-export default function Layout({}: Props) {
+const Layout = (): JSX.Element => {
   return (
     <>
       <Header />
-      <main>
+      <main className="min-h-[85vh] bg-gray-200">
         <Outlet />
       </main>
       <Footer />
     </>
   );
-}
+};
+
+export default Layout;
