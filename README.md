@@ -18,3 +18,8 @@ Use `npm install` to install all dependencies.</br>
 Use `npm start` to start server.</br>
 
 Open your browser and navigate to http://localhost:3000/
+
+#### Login to existing account
+
+Email: `test@test.io`</br>
+Password: `test`
